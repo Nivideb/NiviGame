@@ -1,3 +1,14 @@
+
+
+El método `pygame.event.get()` en Pygame se usa para obtener todos los eventos de la cola de eventos. 
+Esto es útil para manejar interacciones del usuario, como presionar teclas, mover el ratón, cerrar la ventana, etc. 
+Aquí hay una explicación más detallada y un ejemplo de cómo usarlo:
+
+### Explicación
+- `pygame.event.get()` devuelve una lista de eventos que han ocurrido desde la última vez que se llamó a este método.
+- Cada evento es un objeto de tipo `pygame.event.Event`, que tiene atributos como `type`, `key`, `pos`, entre otros, dependiendo del tipo de evento.
+
+------------------------------------------------------------------------
 import pygame
 import sys
 
@@ -30,3 +41,15 @@ while running:
 # Salir de Pygame
 pygame.quit()
 sys.exit()
+```
+
+### Descripción del ejemplo
+1. Se inicializa Pygame y se configura una ventana de 800x600 píxeles.
+2. Se entra en un bucle principal del juego (`while running:`).
+3. Dentro del bucle, se llama a `pygame.event.get()` para obtener todos los eventos.
+4. Se procesa cada evento:
+   - Si el evento es de tipo `QUIT` (como cerrar la ventana), se sale del bucle.
+   - Si se presiona una tecla (`KEYDOWN`), se comprueba si es la tecla `ESCAPE` o la barra espaciadora (`SPACE`).
+5. Se actualiza la lógica del juego y se refresca la pantalla.
+6. Al salir del bucle, se cierra Pygame y se termina el programa.
+
