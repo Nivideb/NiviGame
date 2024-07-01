@@ -1,0 +1,32 @@
+import pygame
+import sys
+
+# Inicializar Pygame
+pygame.init()
+
+# Configurar la ventana del juego
+screen = pygame.display.set_mode((800, 600))
+pygame.display.set_caption("Ejemplo de Pygame")
+
+# Bucle principal del juego
+running = True
+while running:
+    # Obtener todos los eventos
+    for event in pygame.event.get():
+        # Si el evento es de salir, cerrar el programa
+        if event.type == pygame.QUIT:
+            running = False
+        # Si se presiona una tecla
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                running = False
+            elif event.key == pygame.K_SPACE:
+                print("¡Se presionó la barra espaciadora!")
+
+    # Lógica del juego y actualización de la pantalla
+    screen.fill((0, 0, 0))  # Limpiar la pantalla con color negro
+    pygame.display.flip()   # Actualizar la pantalla
+
+# Salir de Pygame
+pygame.quit()
+sys.exit()
